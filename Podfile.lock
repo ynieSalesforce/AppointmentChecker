@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (5.4.1)
+  - FlexLayout (1.3.20)
+  - Overture (0.5.0)
+  - PinLayout (1.9.3)
+  - ReactiveCocoa (10.3.0):
+    - ReactiveSwift (~> 6.2)
+  - ReactiveSwift (6.5.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - FlexLayout
+  - Overture
+  - PinLayout
+  - ReactiveCocoa (~> 10.1)
+  - ReactiveSwift (~> 6.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FlexLayout
+    - Overture
+    - PinLayout
+    - ReactiveCocoa
+    - ReactiveSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  FlexLayout: 025dd153bd5618dcc9f93ef914106d7dc2a86fdc
+  Overture: 2e6252ead5da6d3347f758047f27a31cb469d59d
+  PinLayout: 4d8733121f8687edcc8f00c19bf1379d12808767
+  ReactiveCocoa: 083ae559e6f588ce519cab412ea119b431c26a24
+  ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
+
+PODFILE CHECKSUM: ca8ca473445a49f71fb9f50c894dd0c33355b040
+
+COCOAPODS: 1.10.1
