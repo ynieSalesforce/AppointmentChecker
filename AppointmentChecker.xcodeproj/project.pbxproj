@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2A9F97A347F0CD952C61DB5B /* Pods_AppointmentChecker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76385F360C55FEFEB7E53B7D /* Pods_AppointmentChecker.framework */; };
 		6C36DF7D1839CAADFFFA80DD /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C757D689BB9F0810EA87A85F /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework */; };
+		9B224BC925DCB805009976CE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B224BC825DCB805009976CE /* APIClient.swift */; };
+		9B224BD125DCB813009976CE /* LoadInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B224BD025DCB813009976CE /* LoadInput.swift */; };
 		9BC3EE9125DB4AA80081639F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9025DB4AA80081639F /* AppDelegate.swift */; };
 		9BC3EE9325DB4AA80081639F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9225DB4AA80081639F /* SceneDelegate.swift */; };
 		9BC3EE9525DB4AA80081639F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9425DB4AA80081639F /* ViewController.swift */; };
@@ -21,7 +23,7 @@
 		9BC3EED425DB4B120081639F /* StoresListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EED325DB4B120081639F /* StoresListViewModel.swift */; };
 		9BC3EEDC25DB4B290081639F /* StoresListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEDB25DB4B290081639F /* StoresListViewController.swift */; };
 		9BC3EEE225DB4B590081639F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEE125DB4B590081639F /* Environment.swift */; };
-		9BC3EEEB25DB4B720081639F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEEA25DB4B720081639F /* DataService.swift */; };
+		9BC3EEEB25DB4B720081639F /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEEA25DB4B720081639F /* DataRequest.swift */; };
 		9BC3EEFA25DB5EB30081639F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEF925DB5EB30081639F /* Request.swift */; };
 		9BC3EF0125DB5FA70081639F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EF0025DB5FA70081639F /* BaseViewController.swift */; };
 		9BC3EF0625DB5FC80081639F /* ViewLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EF0525DB5FC80081639F /* ViewLifeCycle.swift */; };
@@ -53,6 +55,8 @@
 		1D1847DF77B8D74FCFFC1FCD /* Pods_AppointmentCheckerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppointmentCheckerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4311F988A2C98CDC698A59 /* Pods-AppointmentCheckerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointmentCheckerTests.release.xcconfig"; path = "Target Support Files/Pods-AppointmentCheckerTests/Pods-AppointmentCheckerTests.release.xcconfig"; sourceTree = "<group>"; };
 		76385F360C55FEFEB7E53B7D /* Pods_AppointmentChecker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppointmentChecker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B224BC825DCB805009976CE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		9B224BD025DCB813009976CE /* LoadInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadInput.swift; sourceTree = "<group>"; };
 		9BC3EE8D25DB4AA80081639F /* AppointmentChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppointmentChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC3EE9025DB4AA80081639F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC3EE9225DB4AA80081639F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 		9BC3EED325DB4B120081639F /* StoresListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresListViewModel.swift; sourceTree = "<group>"; };
 		9BC3EEDB25DB4B290081639F /* StoresListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresListViewController.swift; sourceTree = "<group>"; };
 		9BC3EEE125DB4B590081639F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		9BC3EEEA25DB4B720081639F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		9BC3EEEA25DB4B720081639F /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		9BC3EEF925DB5EB30081639F /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		9BC3EF0025DB5FA70081639F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9BC3EF0525DB5FC80081639F /* ViewLifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLifeCycle.swift; sourceTree = "<group>"; };
@@ -128,6 +132,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9B224BC725DCB7ED009976CE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9BC3EEEA25DB4B720081639F /* DataRequest.swift */,
+				9BC3EEF925DB5EB30081639F /* Request.swift */,
+				9BC3EF1525DB60B10081639F /* DataLoadingError.swift */,
+				9B224BD025DCB813009976CE /* LoadInput.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		9BC3EE8425DB4AA80081639F = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +168,7 @@
 		9BC3EE8F25DB4AA80081639F /* AppointmentChecker */ = {
 			isa = PBXGroup;
 			children = (
+				9B224BC725DCB7ED009976CE /* Data */,
 				9BC3EF0A25DB5FDD0081639F /* Prelude */,
 				9BC3EEFF25DB5F9B0081639F /* UI */,
 				9BC3EEE925DB4B5D0081639F /* Services */,
@@ -208,9 +224,7 @@
 		9BC3EEE925DB4B5D0081639F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9BC3EEEA25DB4B720081639F /* DataService.swift */,
-				9BC3EEF925DB5EB30081639F /* Request.swift */,
-				9BC3EF1525DB60B10081639F /* DataLoadingError.swift */,
+				9B224BC825DCB805009976CE /* APIClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -485,6 +499,7 @@
 				9BC3EE9525DB4AA80081639F /* ViewController.swift in Sources */,
 				9BC3EF2725DB655D0081639F /* TriggerSignal.swift in Sources */,
 				9BC3EE9125DB4AA80081639F /* AppDelegate.swift in Sources */,
+				9B224BC925DCB805009976CE /* APIClient.swift in Sources */,
 				9BC3EE9325DB4AA80081639F /* SceneDelegate.swift in Sources */,
 				9BC3EF1625DB60B10081639F /* DataLoadingError.swift in Sources */,
 				9BC3EF0C25DB5FF50081639F /* Function.swift in Sources */,
@@ -495,7 +510,8 @@
 				9BC3EE9B25DB4AA80081639F /* AppointmentChecker.xcdatamodeld in Sources */,
 				9BC3EEDC25DB4B290081639F /* StoresListViewController.swift in Sources */,
 				9BC3EEFA25DB5EB30081639F /* Request.swift in Sources */,
-				9BC3EEEB25DB4B720081639F /* DataService.swift in Sources */,
+				9B224BD125DCB813009976CE /* LoadInput.swift in Sources */,
+				9BC3EEEB25DB4B720081639F /* DataRequest.swift in Sources */,
 				9BC3EF0625DB5FC80081639F /* ViewLifeCycle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum Request {
   case RetrieveStores(radius: Int, location: String)
