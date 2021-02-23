@@ -8,11 +8,11 @@
 import Foundation
 import Alamofire
 
-enum Request {
+enum RequestType {
   case RetrieveStores(radius: Int, location: String)
 }
 
-extension Request {
+extension RequestType {
   var host: String {
     switch self {
     case .RetrieveStores:

@@ -23,14 +23,16 @@
 		9BC3EED425DB4B120081639F /* StoresListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EED325DB4B120081639F /* StoresListViewModel.swift */; };
 		9BC3EEDC25DB4B290081639F /* StoresListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEDB25DB4B290081639F /* StoresListViewController.swift */; };
 		9BC3EEE225DB4B590081639F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEE125DB4B590081639F /* Environment.swift */; };
-		9BC3EEEB25DB4B720081639F /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEEA25DB4B720081639F /* DataRequest.swift */; };
-		9BC3EEFA25DB5EB30081639F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEF925DB5EB30081639F /* Request.swift */; };
+		9BC3EEEB25DB4B720081639F /* DataQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEEA25DB4B720081639F /* DataQuery.swift */; };
+		9BC3EEFA25DB5EB30081639F /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EEF925DB5EB30081639F /* RequestType.swift */; };
 		9BC3EF0125DB5FA70081639F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EF0025DB5FA70081639F /* BaseViewController.swift */; };
 		9BC3EF0625DB5FC80081639F /* ViewLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EF0525DB5FC80081639F /* ViewLifeCycle.swift */; };
 		9BC3EF0C25DB5FF50081639F /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EF0B25DB5FF50081639F /* Function.swift */; };
 		9BC3EF1125DB607C0081639F /* Reloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EF1025DB607C0081639F /* Reloadable.swift */; };
 		9BC3EF1625DB60B10081639F /* DataLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EF1525DB60B10081639F /* DataLoadingError.swift */; };
 		9BC3EF2725DB655D0081639F /* TriggerSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EF2625DB655D0081639F /* TriggerSignal.swift */; };
+		9BE5D5F325E57BEC00B4D7B9 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5D5F225E57BEC00B4D7B9 /* DataService.swift */; };
+		9BE5D60425E584D300B4D7B9 /* ResponseDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5D60325E584D300B4D7B9 /* ResponseDecoding.swift */; };
 		F188C952EC05B01A3A8AB9B0 /* Pods_AppointmentCheckerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1847DF77B8D74FCFFC1FCD /* Pods_AppointmentCheckerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,14 +77,16 @@
 		9BC3EED325DB4B120081639F /* StoresListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresListViewModel.swift; sourceTree = "<group>"; };
 		9BC3EEDB25DB4B290081639F /* StoresListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresListViewController.swift; sourceTree = "<group>"; };
 		9BC3EEE125DB4B590081639F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		9BC3EEEA25DB4B720081639F /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
-		9BC3EEF925DB5EB30081639F /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		9BC3EEEA25DB4B720081639F /* DataQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQuery.swift; sourceTree = "<group>"; };
+		9BC3EEF925DB5EB30081639F /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		9BC3EF0025DB5FA70081639F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9BC3EF0525DB5FC80081639F /* ViewLifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLifeCycle.swift; sourceTree = "<group>"; };
 		9BC3EF0B25DB5FF50081639F /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		9BC3EF1025DB607C0081639F /* Reloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reloadable.swift; sourceTree = "<group>"; };
 		9BC3EF1525DB60B10081639F /* DataLoadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingError.swift; sourceTree = "<group>"; };
 		9BC3EF2625DB655D0081639F /* TriggerSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerSignal.swift; sourceTree = "<group>"; };
+		9BE5D5F225E57BEC00B4D7B9 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		9BE5D60325E584D300B4D7B9 /* ResponseDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoding.swift; sourceTree = "<group>"; };
 		AAB63BD2C95CCA8B565B5E38 /* Pods-AppointmentChecker-AppointmentCheckerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointmentChecker-AppointmentCheckerUITests.debug.xcconfig"; path = "Target Support Files/Pods-AppointmentChecker-AppointmentCheckerUITests/Pods-AppointmentChecker-AppointmentCheckerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C394CD37F35EC2D54E94347B /* Pods-AppointmentChecker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointmentChecker.release.xcconfig"; path = "Target Support Files/Pods-AppointmentChecker/Pods-AppointmentChecker.release.xcconfig"; sourceTree = "<group>"; };
 		C757D689BB9F0810EA87A85F /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppointmentChecker_AppointmentCheckerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,8 +139,8 @@
 		9B224BC725DCB7ED009976CE /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9BC3EEEA25DB4B720081639F /* DataRequest.swift */,
-				9BC3EEF925DB5EB30081639F /* Request.swift */,
+				9BC3EEEA25DB4B720081639F /* DataQuery.swift */,
+				9BC3EEF925DB5EB30081639F /* RequestType.swift */,
 				9BC3EF1525DB60B10081639F /* DataLoadingError.swift */,
 				9B224BD025DCB813009976CE /* LoadInput.swift */,
 			);
@@ -225,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				9B224BC825DCB805009976CE /* APIClient.swift */,
+				9BE5D5F225E57BEC00B4D7B9 /* DataService.swift */,
+				9BE5D60325E584D300B4D7B9 /* ResponseDecoding.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -505,13 +511,15 @@
 				9BC3EF0C25DB5FF50081639F /* Function.swift in Sources */,
 				9BC3EEE225DB4B590081639F /* Environment.swift in Sources */,
 				9BC3EED425DB4B120081639F /* StoresListViewModel.swift in Sources */,
+				9BE5D5F325E57BEC00B4D7B9 /* DataService.swift in Sources */,
 				9BC3EF0125DB5FA70081639F /* BaseViewController.swift in Sources */,
 				9BC3EF1125DB607C0081639F /* Reloadable.swift in Sources */,
 				9BC3EE9B25DB4AA80081639F /* AppointmentChecker.xcdatamodeld in Sources */,
 				9BC3EEDC25DB4B290081639F /* StoresListViewController.swift in Sources */,
-				9BC3EEFA25DB5EB30081639F /* Request.swift in Sources */,
+				9BE5D60425E584D300B4D7B9 /* ResponseDecoding.swift in Sources */,
+				9BC3EEFA25DB5EB30081639F /* RequestType.swift in Sources */,
 				9B224BD125DCB813009976CE /* LoadInput.swift in Sources */,
-				9BC3EEEB25DB4B720081639F /* DataRequest.swift in Sources */,
+				9BC3EEEB25DB4B720081639F /* DataQuery.swift in Sources */,
 				9BC3EF0625DB5FC80081639F /* ViewLifeCycle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

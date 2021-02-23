@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ReactiveSwift
 
 typealias TriggerSignal = Signal<Void, Never>
 typealias TriggerProducer = SignalProducer<Void, Never>
