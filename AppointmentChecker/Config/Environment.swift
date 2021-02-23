@@ -11,6 +11,7 @@ import ReactiveSwift
 public struct Environment {
   var scheduler: DateScheduler = QueueScheduler(qos: .userInitiated, name: "com.yuchenNie.userInitiated")
   var apiClient: APIClient = APIClient()
+  var dataLoader: DataServiceType = DataService()
 }
 
 public extension Environment {
