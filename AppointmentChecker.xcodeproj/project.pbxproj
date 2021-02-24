@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		2A9F97A347F0CD952C61DB5B /* Pods_AppointmentChecker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76385F360C55FEFEB7E53B7D /* Pods_AppointmentChecker.framework */; };
 		6C36DF7D1839CAADFFFA80DD /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C757D689BB9F0810EA87A85F /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework */; };
+		9B00C92025E5D544008F537A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C91F25E5D544008F537A /* Store.swift */; };
+		9B00C92525E5D60D008F537A /* StoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C92425E5D60D008F537A /* StoreList.swift */; };
+		9B00C92A25E5D6AC008F537A /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C92925E5D6AC008F537A /* DataType.swift */; };
+		9B00C93225E5F2DD008F537A /* MaterializedDataLoadingProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C93125E5F2DD008F537A /* MaterializedDataLoadingProducer.swift */; };
+		9B00C93725E5F4B5008F537A /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C93625E5F4B5008F537A /* Values.swift */; };
+		9B00C93C25E5F4C1008F537A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C93B25E5F4C1008F537A /* Errors.swift */; };
+		9B00C94125E5F511008F537A /* IndicatorSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C94025E5F511008F537A /* IndicatorSignal.swift */; };
 		9B224BC925DCB805009976CE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B224BC825DCB805009976CE /* APIClient.swift */; };
 		9B224BD125DCB813009976CE /* LoadInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B224BD025DCB813009976CE /* LoadInput.swift */; };
 		9BC3EE9125DB4AA80081639F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9025DB4AA80081639F /* AppDelegate.swift */; };
@@ -57,6 +64,13 @@
 		1D1847DF77B8D74FCFFC1FCD /* Pods_AppointmentCheckerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppointmentCheckerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4311F988A2C98CDC698A59 /* Pods-AppointmentCheckerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointmentCheckerTests.release.xcconfig"; path = "Target Support Files/Pods-AppointmentCheckerTests/Pods-AppointmentCheckerTests.release.xcconfig"; sourceTree = "<group>"; };
 		76385F360C55FEFEB7E53B7D /* Pods_AppointmentChecker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppointmentChecker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B00C91F25E5D544008F537A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9B00C92425E5D60D008F537A /* StoreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreList.swift; sourceTree = "<group>"; };
+		9B00C92925E5D6AC008F537A /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		9B00C93125E5F2DD008F537A /* MaterializedDataLoadingProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterializedDataLoadingProducer.swift; sourceTree = "<group>"; };
+		9B00C93625E5F4B5008F537A /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
+		9B00C93B25E5F4C1008F537A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		9B00C94025E5F511008F537A /* IndicatorSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSignal.swift; sourceTree = "<group>"; };
 		9B224BC825DCB805009976CE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		9B224BD025DCB813009976CE /* LoadInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadInput.swift; sourceTree = "<group>"; };
 		9BC3EE8D25DB4AA80081639F /* AppointmentChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppointmentChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +150,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9B00C91B25E5D4E0008F537A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B00C91F25E5D544008F537A /* Store.swift */,
+				9B00C92425E5D60D008F537A /* StoreList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9B224BC725DCB7ED009976CE /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +234,7 @@
 		9BC3EED225DB4AFF0081639F /* GetStores */ = {
 			isa = PBXGroup;
 			children = (
+				9B00C91B25E5D4E0008F537A /* Models */,
 				9BC3EED325DB4B120081639F /* StoresListViewModel.swift */,
 				9BC3EEDB25DB4B290081639F /* StoresListViewController.swift */,
 			);
@@ -250,6 +274,11 @@
 			children = (
 				9BC3EF0B25DB5FF50081639F /* Function.swift */,
 				9BC3EF2625DB655D0081639F /* TriggerSignal.swift */,
+				9B00C92925E5D6AC008F537A /* DataType.swift */,
+				9B00C93125E5F2DD008F537A /* MaterializedDataLoadingProducer.swift */,
+				9B00C93625E5F4B5008F537A /* Values.swift */,
+				9B00C93B25E5F4C1008F537A /* Errors.swift */,
+				9B00C94025E5F511008F537A /* IndicatorSignal.swift */,
 			);
 			path = Prelude;
 			sourceTree = "<group>";
@@ -507,16 +536,23 @@
 				9BC3EE9125DB4AA80081639F /* AppDelegate.swift in Sources */,
 				9B224BC925DCB805009976CE /* APIClient.swift in Sources */,
 				9BC3EE9325DB4AA80081639F /* SceneDelegate.swift in Sources */,
+				9B00C93225E5F2DD008F537A /* MaterializedDataLoadingProducer.swift in Sources */,
 				9BC3EF1625DB60B10081639F /* DataLoadingError.swift in Sources */,
+				9B00C93725E5F4B5008F537A /* Values.swift in Sources */,
 				9BC3EF0C25DB5FF50081639F /* Function.swift in Sources */,
 				9BC3EEE225DB4B590081639F /* Environment.swift in Sources */,
 				9BC3EED425DB4B120081639F /* StoresListViewModel.swift in Sources */,
+				9B00C92A25E5D6AC008F537A /* DataType.swift in Sources */,
+				9B00C92525E5D60D008F537A /* StoreList.swift in Sources */,
 				9BE5D5F325E57BEC00B4D7B9 /* DataService.swift in Sources */,
 				9BC3EF0125DB5FA70081639F /* BaseViewController.swift in Sources */,
 				9BC3EF1125DB607C0081639F /* Reloadable.swift in Sources */,
+				9B00C93C25E5F4C1008F537A /* Errors.swift in Sources */,
+				9B00C94125E5F511008F537A /* IndicatorSignal.swift in Sources */,
 				9BC3EE9B25DB4AA80081639F /* AppointmentChecker.xcdatamodeld in Sources */,
 				9BC3EEDC25DB4B290081639F /* StoresListViewController.swift in Sources */,
 				9BE5D60425E584D300B4D7B9 /* ResponseDecoding.swift in Sources */,
+				9B00C92025E5D544008F537A /* Store.swift in Sources */,
 				9BC3EEFA25DB5EB30081639F /* RequestType.swift in Sources */,
 				9B224BD125DCB813009976CE /* LoadInput.swift in Sources */,
 				9BC3EEEB25DB4B720081639F /* DataQuery.swift in Sources */,

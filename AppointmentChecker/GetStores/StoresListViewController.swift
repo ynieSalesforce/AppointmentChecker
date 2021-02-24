@@ -7,10 +7,14 @@
 
 import Foundation
 import UIKit
+import ReactiveSwift
+import ReactiveCocoa
 
 class StoresListViewController: BaseViewController {
+  let (addressSignal, addressObserver) = Signal<String, Never>.pipe()
+  
   override func bindViewModel() {
-    
+    let output = StoresListViewModel.create(input: .init(address: addressSignal, refresh: .never))
   }
   
   
