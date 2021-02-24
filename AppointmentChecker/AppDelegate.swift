@@ -11,9 +11,13 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    let navController = UINavigationController.init()
+    let addressSearch = StoresListViewController.init()
+    navController.viewControllers = [addressSearch]
+    window.rootViewController = navController
+    window.makeKeyAndVisible()
     // Override point for customization after application launch.
     return true
   }

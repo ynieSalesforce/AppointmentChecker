@@ -9,6 +9,11 @@ import Foundation
 
 struct StoreList: Codable {
   let stores: [Store]
+  let resolvedAddress: ResolvedAddress
+}
+
+struct ResolvedAddress: Codable {
+  let displayName: String
   let latitude: Float
   let longitude: Float
 }

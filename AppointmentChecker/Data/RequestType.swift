@@ -23,7 +23,7 @@ extension RequestType {
   var path: String {
     switch self {
     case .RetrieveStores:
-      return "services/ext/v2/vaccine/checkSlots"
+      return "/services/ext/v2/stores/getStores"
     }
   }
 }

@@ -24,7 +24,9 @@ extension DataQuery {
     case let .RetrieveStores(radius, location):
       components.queryItems = [
         URLQueryItem(name: "radius", value: "\(radius)"),
-        URLQueryItem(name: "location", value: location)
+        URLQueryItem(name: "address", value: location),
+        URLQueryItem(name: "attrFilter", value: "PREF-112"),
+        URLQueryItem(name: "fetchMechanismVersion", value: "2")
       ]
     }
     return components.url

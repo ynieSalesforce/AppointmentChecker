@@ -6,6 +6,7 @@ PODS:
   - ReactiveCocoa (10.3.0):
     - ReactiveSwift (~> 6.2)
   - ReactiveSwift (6.5.0)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - PinLayout
   - ReactiveCocoa (~> 10.1)
   - ReactiveSwift (~> 6.1)
+  - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - PinLayout
     - ReactiveCocoa
     - ReactiveSwift
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -31,7 +34,8 @@ SPEC CHECKSUMS:
   PinLayout: 4d8733121f8687edcc8f00c19bf1379d12808767
   ReactiveCocoa: 083ae559e6f588ce519cab412ea119b431c26a24
   ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: ca8ca473445a49f71fb9f50c894dd0c33355b040
+PODFILE CHECKSUM: bd3332a11a8a89c66928231492f51f888b169423
 
 COCOAPODS: 1.10.1

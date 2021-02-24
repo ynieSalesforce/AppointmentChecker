@@ -18,10 +18,12 @@
 		9B00C94125E5F511008F537A /* IndicatorSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C94025E5F511008F537A /* IndicatorSignal.swift */; };
 		9B224BC925DCB805009976CE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B224BC825DCB805009976CE /* APIClient.swift */; };
 		9B224BD125DCB813009976CE /* LoadInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B224BD025DCB813009976CE /* LoadInput.swift */; };
+		9B4C2AFD25E6CB4E007E76D1 /* UITableview+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2AFC25E6CB4E007E76D1 /* UITableview+Extensions.swift */; };
+		9B4C2B0525E6CD74007E76D1 /* EnterAddressHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B0425E6CD74007E76D1 /* EnterAddressHeader.swift */; };
+		9B4C2B0A25E6D0AC007E76D1 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B0925E6D0AC007E76D1 /* UIButton+Extensions.swift */; };
+		9B4C2B0F25E6D426007E76D1 /* Signal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B0E25E6D426007E76D1 /* Signal+Extensions.swift */; };
 		9BC3EE9125DB4AA80081639F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9025DB4AA80081639F /* AppDelegate.swift */; };
 		9BC3EE9325DB4AA80081639F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9225DB4AA80081639F /* SceneDelegate.swift */; };
-		9BC3EE9525DB4AA80081639F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9425DB4AA80081639F /* ViewController.swift */; };
-		9BC3EE9825DB4AA80081639F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9625DB4AA80081639F /* Main.storyboard */; };
 		9BC3EE9B25DB4AA80081639F /* AppointmentChecker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9925DB4AA80081639F /* AppointmentChecker.xcdatamodeld */; };
 		9BC3EE9D25DB4AA90081639F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9C25DB4AA90081639F /* Assets.xcassets */; };
 		9BC3EEA025DB4AA90081639F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9E25DB4AA90081639F /* LaunchScreen.storyboard */; };
@@ -73,11 +75,13 @@
 		9B00C94025E5F511008F537A /* IndicatorSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSignal.swift; sourceTree = "<group>"; };
 		9B224BC825DCB805009976CE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		9B224BD025DCB813009976CE /* LoadInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadInput.swift; sourceTree = "<group>"; };
+		9B4C2AFC25E6CB4E007E76D1 /* UITableview+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableview+Extensions.swift"; sourceTree = "<group>"; };
+		9B4C2B0425E6CD74007E76D1 /* EnterAddressHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressHeader.swift; sourceTree = "<group>"; };
+		9B4C2B0925E6D0AC007E76D1 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		9B4C2B0E25E6D426007E76D1 /* Signal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Signal+Extensions.swift"; sourceTree = "<group>"; };
 		9BC3EE8D25DB4AA80081639F /* AppointmentChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppointmentChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC3EE9025DB4AA80081639F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC3EE9225DB4AA80081639F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9BC3EE9425DB4AA80081639F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9BC3EE9725DB4AA80081639F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BC3EE9A25DB4AA80081639F /* AppointmentChecker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppointmentChecker.xcdatamodel; sourceTree = "<group>"; };
 		9BC3EE9C25DB4AA90081639F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BC3EE9F25DB4AA90081639F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -170,6 +174,23 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		9B4C2AF725E6C957007E76D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B4C2B0425E6CD74007E76D1 /* EnterAddressHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B4C2AFB25E6CB3B007E76D1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B4C2AFC25E6CB4E007E76D1 /* UITableview+Extensions.swift */,
+				9B4C2B0925E6D0AC007E76D1 /* UIButton+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9BC3EE8425DB4AA80081639F = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +216,7 @@
 		9BC3EE8F25DB4AA80081639F /* AppointmentChecker */ = {
 			isa = PBXGroup;
 			children = (
+				9B4C2AFB25E6CB3B007E76D1 /* Extensions */,
 				9B224BC725DCB7ED009976CE /* Data */,
 				9BC3EF0A25DB5FDD0081639F /* Prelude */,
 				9BC3EEFF25DB5F9B0081639F /* UI */,
@@ -203,8 +225,6 @@
 				9BC3EED225DB4AFF0081639F /* GetStores */,
 				9BC3EE9025DB4AA80081639F /* AppDelegate.swift */,
 				9BC3EE9225DB4AA80081639F /* SceneDelegate.swift */,
-				9BC3EE9425DB4AA80081639F /* ViewController.swift */,
-				9BC3EE9625DB4AA80081639F /* Main.storyboard */,
 				9BC3EE9C25DB4AA90081639F /* Assets.xcassets */,
 				9BC3EE9E25DB4AA90081639F /* LaunchScreen.storyboard */,
 				9BC3EEA125DB4AA90081639F /* Info.plist */,
@@ -234,6 +254,7 @@
 		9BC3EED225DB4AFF0081639F /* GetStores */ = {
 			isa = PBXGroup;
 			children = (
+				9B4C2AF725E6C957007E76D1 /* Views */,
 				9B00C91B25E5D4E0008F537A /* Models */,
 				9BC3EED325DB4B120081639F /* StoresListViewModel.swift */,
 				9BC3EEDB25DB4B290081639F /* StoresListViewController.swift */,
@@ -279,6 +300,7 @@
 				9B00C93625E5F4B5008F537A /* Values.swift */,
 				9B00C93B25E5F4C1008F537A /* Errors.swift */,
 				9B00C94025E5F511008F537A /* IndicatorSignal.swift */,
+				9B4C2B0E25E6D426007E76D1 /* Signal+Extensions.swift */,
 			);
 			path = Prelude;
 			sourceTree = "<group>";
@@ -403,7 +425,6 @@
 			files = (
 				9BC3EEA025DB4AA90081639F /* LaunchScreen.storyboard in Resources */,
 				9BC3EE9D25DB4AA90081639F /* Assets.xcassets in Resources */,
-				9BC3EE9825DB4AA80081639F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,10 +552,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BC3EE9525DB4AA80081639F /* ViewController.swift in Sources */,
 				9BC3EF2725DB655D0081639F /* TriggerSignal.swift in Sources */,
 				9BC3EE9125DB4AA80081639F /* AppDelegate.swift in Sources */,
+				9B4C2B0A25E6D0AC007E76D1 /* UIButton+Extensions.swift in Sources */,
 				9B224BC925DCB805009976CE /* APIClient.swift in Sources */,
+				9B4C2B0F25E6D426007E76D1 /* Signal+Extensions.swift in Sources */,
 				9BC3EE9325DB4AA80081639F /* SceneDelegate.swift in Sources */,
 				9B00C93225E5F2DD008F537A /* MaterializedDataLoadingProducer.swift in Sources */,
 				9BC3EF1625DB60B10081639F /* DataLoadingError.swift in Sources */,
@@ -545,11 +567,13 @@
 				9B00C92A25E5D6AC008F537A /* DataType.swift in Sources */,
 				9B00C92525E5D60D008F537A /* StoreList.swift in Sources */,
 				9BE5D5F325E57BEC00B4D7B9 /* DataService.swift in Sources */,
+				9B4C2AFD25E6CB4E007E76D1 /* UITableview+Extensions.swift in Sources */,
 				9BC3EF0125DB5FA70081639F /* BaseViewController.swift in Sources */,
 				9BC3EF1125DB607C0081639F /* Reloadable.swift in Sources */,
 				9B00C93C25E5F4C1008F537A /* Errors.swift in Sources */,
 				9B00C94125E5F511008F537A /* IndicatorSignal.swift in Sources */,
 				9BC3EE9B25DB4AA80081639F /* AppointmentChecker.xcdatamodeld in Sources */,
+				9B4C2B0525E6CD74007E76D1 /* EnterAddressHeader.swift in Sources */,
 				9BC3EEDC25DB4B290081639F /* StoresListViewController.swift in Sources */,
 				9BE5D60425E584D300B4D7B9 /* ResponseDecoding.swift in Sources */,
 				9B00C92025E5D544008F537A /* Store.swift in Sources */,
@@ -592,14 +616,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9BC3EE9625DB4AA80081639F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9BC3EE9725DB4AA80081639F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9BC3EE9E25DB4AA90081639F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
