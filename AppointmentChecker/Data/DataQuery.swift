@@ -28,6 +28,10 @@ extension DataQuery {
         URLQueryItem(name: "attrFilter", value: "PREF-112"),
         URLQueryItem(name: "fetchMechanismVersion", value: "2")
       ]
+    case .CheckAppointments(let storeNumber):
+      components.queryItems = [
+        URLQueryItem(name: "storeNumber", value: storeNumber)
+      ]
     }
     return components.url
   }
@@ -40,4 +44,12 @@ extension DataQuery {
     }
     return .init(type: .RetrieveStores(radius: radius, location: location), method: .get, decoder: .decodable)
   }
+  
+  static func availableAppoints(for criteria: LoadCriteria) -> DataQuery? {
+    guard let storeId = criteria.loadInput.storeId else {
+      return .none
+    }
+    return .init(type: .CheckAppointments(storeNumber: storeId), method: .get, decoder: .decodable)
+  }
 }
+

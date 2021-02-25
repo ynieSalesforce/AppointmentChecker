@@ -23,7 +23,7 @@ class BaseViewController: UIViewController {
   }
 
   let lifecycle = ViewLifeCycle()
-  let refreshControl = UIRefreshControl.init()
+  let refreshControl = RefreshControl.init()
   
   override public var preferredStatusBarStyle: UIStatusBarStyle {
     .darkContent

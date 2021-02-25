@@ -13,7 +13,7 @@ import SnapKit
 
 class StoresListViewController: BaseViewController {
   let (addressSignal, addressObserver) = Signal<String, Never>.pipe()
-  private var stores: [Store] = []
+  private var stores: [StoreViewData] = []
   
   lazy var addressHeader: EnterAddressHeader = {
     let header = EnterAddressHeader.init(addressObserver: addressObserver)
@@ -23,25 +23,29 @@ class StoresListViewController: BaseViewController {
   
   lazy var tableView: UITableView = {
     let tableView = UITableView(frame: .zero, style: .grouped)
+    tableView.register(LocationCell.self, forCellReuseIdentifier: LocationCell.reuseID)
     tableView.estimatedRowHeight = 44
     tableView.dataSource = self
     tableView.delegate = self
     tableView.hideUnusedRow()
     tableView.separatorInset = .zero
     tableView.contentInsetAdjustmentBehavior = .never
+    tableView.refreshControl = refreshControl
     view.addSubview(tableView)
     return tableView
   }()
   
   override func bindViewModel() {
-    let output = StoresListViewModel.create(input: .init(address: addressSignal, refresh: .never))
+    let output = StoresListViewModel.create(input: .init(address: addressSignal, refresh: refreshControl.refresh))
     output.data.observeForUI().observeValues { [weak self] data in
-      self?.stores = data.Data.stores
+      self?.stores = data.stores
+      self?.tableView.reloadData()
     }
     
     output.dataLoadError.observeForUI().observeValues { error in
       print(error)
     }
+    refreshControl.reactive.isRefreshing <~ output.isRefreshing
   }
   
   override func viewDidLoad() {
@@ -68,10 +72,15 @@ extension StoresListViewController: UITableViewDelegate {
 
 extension StoresListViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    0
+    self.stores.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell.init(frame: .zero)
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.reuseID, for: indexPath) as? LocationCell else {
+      return UITableViewCell.init(frame: .zero)
+    }
+    let store = stores[indexPath.row]
+    cell.configure(with: store)
+    return cell
   }
 }

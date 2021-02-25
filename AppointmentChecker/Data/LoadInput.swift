@@ -10,10 +10,12 @@ import Foundation
 struct LoadInput {
   let radius: Int?
   let location: String?
+  let storeId: String?
   
-  init(radius: Int? = nil, location: String? = nil) {
+  init(radius: Int? = nil, location: String? = nil, storeId: String? = nil) {
     self.radius = radius
     self.location = location
+    self.storeId = storeId
   }
 }
 

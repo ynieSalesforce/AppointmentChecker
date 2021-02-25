@@ -36,6 +36,26 @@ public extension Signal {
   func observeForTableView() -> Signal<Value, Error> {
     signal.delay(0.3, on: QueueScheduler.main)
   }
+  
+  /**
+   Creates a new signal that emits a void value for every emission of `self`.
+
+   - returns: A new signal.
+   */
+  func ignoreValues() -> Signal<Void, Error> {
+    signal.map { _ in () }
+  }
+
+  /**
+   Creates a new signal that removes errors from the stream and changes the error type to Never.
+
+   - returns: A new signal.
+   */
+  func ignoreErrors() -> Signal<Value, Never> {
+    signal.flatMapError { _ in
+      SignalProducer<Value, Never>.empty
+    }
+  }
 }
 
 public extension SignalProducerProtocol {

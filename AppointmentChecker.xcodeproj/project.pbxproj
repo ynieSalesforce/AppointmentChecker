@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A9F97A347F0CD952C61DB5B /* Pods_AppointmentChecker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76385F360C55FEFEB7E53B7D /* Pods_AppointmentChecker.framework */; };
 		6C36DF7D1839CAADFFFA80DD /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C757D689BB9F0810EA87A85F /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework */; };
-		9B00C92025E5D544008F537A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C91F25E5D544008F537A /* Store.swift */; };
+		9B00C92025E5D544008F537A /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C91F25E5D544008F537A /* StoreData.swift */; };
 		9B00C92525E5D60D008F537A /* StoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C92425E5D60D008F537A /* StoreList.swift */; };
 		9B00C92A25E5D6AC008F537A /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C92925E5D6AC008F537A /* DataType.swift */; };
 		9B00C93225E5F2DD008F537A /* MaterializedDataLoadingProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C93125E5F2DD008F537A /* MaterializedDataLoadingProducer.swift */; };
@@ -22,6 +22,9 @@
 		9B4C2B0525E6CD74007E76D1 /* EnterAddressHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B0425E6CD74007E76D1 /* EnterAddressHeader.swift */; };
 		9B4C2B0A25E6D0AC007E76D1 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B0925E6D0AC007E76D1 /* UIButton+Extensions.swift */; };
 		9B4C2B0F25E6D426007E76D1 /* Signal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B0E25E6D426007E76D1 /* Signal+Extensions.swift */; };
+		9B4C2B1D25E6F86F007E76D1 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B1C25E6F86F007E76D1 /* LocationCell.swift */; };
+		9B4C2B2525E71248007E76D1 /* AvailableAppointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B2425E71248007E76D1 /* AvailableAppointments.swift */; };
+		9B4C2B2A25E717D8007E76D1 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B2925E717D8007E76D1 /* RefreshControl.swift */; };
 		9BC3EE9125DB4AA80081639F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9025DB4AA80081639F /* AppDelegate.swift */; };
 		9BC3EE9325DB4AA80081639F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9225DB4AA80081639F /* SceneDelegate.swift */; };
 		9BC3EE9B25DB4AA80081639F /* AppointmentChecker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9925DB4AA80081639F /* AppointmentChecker.xcdatamodeld */; };
@@ -66,7 +69,7 @@
 		1D1847DF77B8D74FCFFC1FCD /* Pods_AppointmentCheckerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppointmentCheckerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4311F988A2C98CDC698A59 /* Pods-AppointmentCheckerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointmentCheckerTests.release.xcconfig"; path = "Target Support Files/Pods-AppointmentCheckerTests/Pods-AppointmentCheckerTests.release.xcconfig"; sourceTree = "<group>"; };
 		76385F360C55FEFEB7E53B7D /* Pods_AppointmentChecker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppointmentChecker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B00C91F25E5D544008F537A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9B00C91F25E5D544008F537A /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		9B00C92425E5D60D008F537A /* StoreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreList.swift; sourceTree = "<group>"; };
 		9B00C92925E5D6AC008F537A /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 		9B00C93125E5F2DD008F537A /* MaterializedDataLoadingProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterializedDataLoadingProducer.swift; sourceTree = "<group>"; };
@@ -79,6 +82,9 @@
 		9B4C2B0425E6CD74007E76D1 /* EnterAddressHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressHeader.swift; sourceTree = "<group>"; };
 		9B4C2B0925E6D0AC007E76D1 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		9B4C2B0E25E6D426007E76D1 /* Signal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Signal+Extensions.swift"; sourceTree = "<group>"; };
+		9B4C2B1C25E6F86F007E76D1 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		9B4C2B2425E71248007E76D1 /* AvailableAppointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableAppointments.swift; sourceTree = "<group>"; };
+		9B4C2B2925E717D8007E76D1 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		9BC3EE8D25DB4AA80081639F /* AppointmentChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppointmentChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC3EE9025DB4AA80081639F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC3EE9225DB4AA80081639F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,8 +163,9 @@
 		9B00C91B25E5D4E0008F537A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9B00C91F25E5D544008F537A /* Store.swift */,
+				9B00C91F25E5D544008F537A /* StoreData.swift */,
 				9B00C92425E5D60D008F537A /* StoreList.swift */,
+				9B4C2B2425E71248007E76D1 /* AvailableAppointments.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				9B4C2B0425E6CD74007E76D1 /* EnterAddressHeader.swift */,
+				9B4C2B1C25E6F86F007E76D1 /* LocationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 				9BC3EF0025DB5FA70081639F /* BaseViewController.swift */,
 				9BC3EF0525DB5FC80081639F /* ViewLifeCycle.swift */,
 				9BC3EF1025DB607C0081639F /* Reloadable.swift */,
+				9B4C2B2925E717D8007E76D1 /* RefreshControl.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -558,6 +567,7 @@
 				9B224BC925DCB805009976CE /* APIClient.swift in Sources */,
 				9B4C2B0F25E6D426007E76D1 /* Signal+Extensions.swift in Sources */,
 				9BC3EE9325DB4AA80081639F /* SceneDelegate.swift in Sources */,
+				9B4C2B1D25E6F86F007E76D1 /* LocationCell.swift in Sources */,
 				9B00C93225E5F2DD008F537A /* MaterializedDataLoadingProducer.swift in Sources */,
 				9BC3EF1625DB60B10081639F /* DataLoadingError.swift in Sources */,
 				9B00C93725E5F4B5008F537A /* Values.swift in Sources */,
@@ -576,11 +586,13 @@
 				9B4C2B0525E6CD74007E76D1 /* EnterAddressHeader.swift in Sources */,
 				9BC3EEDC25DB4B290081639F /* StoresListViewController.swift in Sources */,
 				9BE5D60425E584D300B4D7B9 /* ResponseDecoding.swift in Sources */,
-				9B00C92025E5D544008F537A /* Store.swift in Sources */,
+				9B00C92025E5D544008F537A /* StoreData.swift in Sources */,
 				9BC3EEFA25DB5EB30081639F /* RequestType.swift in Sources */,
 				9B224BD125DCB813009976CE /* LoadInput.swift in Sources */,
+				9B4C2B2525E71248007E76D1 /* AvailableAppointments.swift in Sources */,
 				9BC3EEEB25DB4B720081639F /* DataQuery.swift in Sources */,
 				9BC3EF0625DB5FC80081639F /* ViewLifeCycle.swift in Sources */,
+				9B4C2B2A25E717D8007E76D1 /* RefreshControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

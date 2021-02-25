@@ -9,9 +9,23 @@ import Foundation
 import Overture
 import ReactiveSwift
 
+struct LocationViewData {
+  let stores: [StoreViewData]
+  let locationName: String
+}
+
+struct StoreViewData {
+  let storeName: String
+  let storeAddress: String
+  let storePhone: String
+  let distance: String
+  
+  let appointmentData: SignalProducer<DataType<AppointmentData>, DataLoadingError>
+}
+
 public struct StoresListViewModel {
   struct Output {
-    let data: Signal<DataType<StoreList>, Never>
+    let data: Signal<LocationViewData, Never>
     let dataIsLoading: Signal<Bool, Never>
     let isRefreshing: Signal<Bool, Never>
     let dataLoadError: Signal<DataLoadingError, Never>
@@ -39,7 +53,7 @@ public struct StoresListViewModel {
     let (addressLoading, addressData) = switchMapWithIndicator(address)
     let (refreshing, refreshedData) = switchMapWithIndicator(refresh)
     
-    let data = Signal.merge(addressData.values(), refreshedData.values())
+    let data = Signal.merge(addressData.values().map(toViewData), refreshedData.values().map(toViewData))
     let errors = Signal.merge(addressData.errors(), refreshedData.errors())
     
     return .init(data: data,
@@ -56,4 +70,19 @@ private func addressQuery(for address: String) -> DataQuery<DataType<StoreList>>
 
 private func retrieveData(query: DataQuery<DataType<StoreList>>) -> MaterializedDataLoadingProducer<DataType<StoreList>>{
   Environment.current.dataLoader.retrieve(query).materialize()
+}
+
+private func toViewData(storeData: DataType<StoreList>) -> LocationViewData {
+  let stores = storeData.Data.stores.map(storeToStoreViewData)
+  let location = storeData.Data.resolvedAddress.displayName
+  return .init(stores: stores, locationName: location)
+}
+
+private func storeToStoreViewData(store: StoreData) -> StoreViewData {
+  let loadCriteria = LoadCriteria.init(loadInput: .init(storeId: "\(store.storeNumber)"), forceRefresh: true)
+  let query: DataQuery<DataType<AppointmentData>>? = DataQuery.availableAppoints(for: loadCriteria)
+  let appointment = Environment.current.dataLoader.retrieve(query!)
+  let distance = "Distance: \(store.milesFromCenter)mi"
+  
+  return .init(storeName: "Store Number: \(store.storeNumber)", storeAddress: store.address, storePhone: store.fullPhone, distance: distance, appointmentData: appointment)
 }

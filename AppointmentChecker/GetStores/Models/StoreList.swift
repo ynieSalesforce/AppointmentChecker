@@ -8,7 +8,7 @@
 import Foundation
 
 struct StoreList: Codable {
-  let stores: [Store]
+  let stores: [StoreData]
   let resolvedAddress: ResolvedAddress
 }
 
