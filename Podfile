@@ -11,6 +11,7 @@ target 'AppointmentChecker' do
   pod 'ReactiveCocoa', '~> 10.1'
   pod 'Overture'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'KeychainSwift', '~> 19.0'
   # Pods for AppointmentChecker
 
   target 'AppointmentCheckerTests' do

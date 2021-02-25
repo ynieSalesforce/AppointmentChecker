@@ -36,7 +36,9 @@ class StoresListViewController: BaseViewController {
   }()
   
   override func bindViewModel() {
-    let output = StoresListViewModel.create(input: .init(address: addressSignal, refresh: refreshControl.refresh))
+    let output = StoresListViewModel.create(input: .init(lifeCycle: lifecycle,
+                                                         address: addressSignal,
+                                                         refresh: refreshControl.refresh))
     output.data.observeForUI().observeValues { [weak self] data in
       self?.stores = data.stores
       self?.tableView.reloadData()
@@ -45,6 +47,8 @@ class StoresListViewController: BaseViewController {
     output.dataLoadError.observeForUI().observeValues { error in
       print(error)
     }
+    
+    addressHeader.setSavedAddress(output.savedValue)
     refreshControl.reactive.isRefreshing <~ output.isRefreshing
   }
   

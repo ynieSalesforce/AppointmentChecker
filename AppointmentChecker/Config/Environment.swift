@@ -12,6 +12,7 @@ public struct Environment {
   var scheduler: DateScheduler = QueueScheduler(qos: .userInitiated, name: "com.yuchenNie.userInitiated")
   var apiClient: APIClient = APIClient()
   var dataLoader: DataServiceType = DataService()
+  var keychainService: KeychainService = KeychainService()
 }
 
 public extension Environment {

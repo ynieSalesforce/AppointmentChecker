@@ -29,15 +29,24 @@ public struct StoresListViewModel {
     let dataIsLoading: Signal<Bool, Never>
     let isRefreshing: Signal<Bool, Never>
     let dataLoadError: Signal<DataLoadingError, Never>
+    let savedValue: String?
   }
 
   struct Input {
+    var lifeCycle: ViewLifeCycle
     var address: Signal<String, Never>
     var refresh: TriggerSignal
   }
   
   static func create(input: Input) -> Output {
     let scheduler = Environment.current.scheduler
+    let onLoad = input.lifeCycle.viewDidLoadProperty.signal.observe(on: scheduler)
+    
+    let dataOnLoad = onLoad.map(retrieveSavedLocation)
+      .skipNil()
+      .map(addressQuery)
+      .skipNil()
+      .map(retrieveData)
     
     let refresh = input.refresh.withLatest(from: input.address)
       .map { $0.1 }
@@ -50,20 +59,31 @@ public struct StoresListViewModel {
       .skipNil()
       .map(retrieveData)
     
+    let (loading, loadData) = switchMapWithIndicator(dataOnLoad)
     let (addressLoading, addressData) = switchMapWithIndicator(address)
     let (refreshing, refreshedData) = switchMapWithIndicator(refresh)
     
-    let data = Signal.merge(addressData.values().map(toViewData), refreshedData.values().map(toViewData))
+    let data = Signal.merge(loadData.values().map(toViewData),
+                            addressData.values().map(toViewData),
+                            refreshedData.values().map(toViewData))
+    
     let errors = Signal.merge(addressData.errors(), refreshedData.errors())
+    let loadingData = Signal.merge(loading, addressLoading)
     
     return .init(data: data,
-                 dataIsLoading: addressLoading,
+                 dataIsLoading: loadingData,
                  isRefreshing: refreshing,
-                 dataLoadError: errors)
+                 dataLoadError: errors,
+                 savedValue: Environment.current.keychainService.getValue(.Address))
   }
 }
 
+private func retrieveSavedLocation() -> String? {
+  Environment.current.keychainService.getValue(.Address)
+}
+
 private func addressQuery(for address: String) -> DataQuery<DataType<StoreList>>? {
+  Environment.current.keychainService.setValue(address, .Address)
   let criteria: LoadCriteria = .init(loadInput: .init(radius: 50, location: address), forceRefresh: true)
   return DataQuery.riteAidLocations(for: criteria)
 }

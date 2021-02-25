@@ -36,8 +36,8 @@ class LocationCell: UITableViewCell {
     let label = UILabel()
     contentView.addSubview(label)
     label.textAlignment = .right
-    label.font = .systemFont(ofSize: 10)
-    label.textColor = .lightGray
+    label.font = .systemFont(ofSize: 14)
+    label.textColor = .darkGray
     return label
   }()
   

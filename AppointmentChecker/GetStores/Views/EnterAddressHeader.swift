@@ -64,6 +64,10 @@ class EnterAddressHeader: UIView {
     super.updateConstraints()
   }
   
+  public func setSavedAddress(_ address: String?) {
+    addressTextfield.text = address
+  }
+  
   private func searchAddress() {
     guard let addressText = addressTextfield.text, !addressText.isEmpty else {
       return

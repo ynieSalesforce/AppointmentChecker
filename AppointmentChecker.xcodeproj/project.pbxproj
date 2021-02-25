@@ -25,6 +25,7 @@
 		9B4C2B1D25E6F86F007E76D1 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B1C25E6F86F007E76D1 /* LocationCell.swift */; };
 		9B4C2B2525E71248007E76D1 /* AvailableAppointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B2425E71248007E76D1 /* AvailableAppointments.swift */; };
 		9B4C2B2A25E717D8007E76D1 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2B2925E717D8007E76D1 /* RefreshControl.swift */; };
+		9B9D5F9A25E7F54B00217AAB /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D5F9925E7F54B00217AAB /* KeychainService.swift */; };
 		9BC3EE9125DB4AA80081639F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9025DB4AA80081639F /* AppDelegate.swift */; };
 		9BC3EE9325DB4AA80081639F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9225DB4AA80081639F /* SceneDelegate.swift */; };
 		9BC3EE9B25DB4AA80081639F /* AppointmentChecker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EE9925DB4AA80081639F /* AppointmentChecker.xcdatamodeld */; };
@@ -85,6 +86,7 @@
 		9B4C2B1C25E6F86F007E76D1 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		9B4C2B2425E71248007E76D1 /* AvailableAppointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableAppointments.swift; sourceTree = "<group>"; };
 		9B4C2B2925E717D8007E76D1 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		9B9D5F9925E7F54B00217AAB /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		9BC3EE8D25DB4AA80081639F /* AppointmentChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppointmentChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC3EE9025DB4AA80081639F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC3EE9225DB4AA80081639F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				9B224BC825DCB805009976CE /* APIClient.swift */,
 				9BE5D5F225E57BEC00B4D7B9 /* DataService.swift */,
 				9BE5D60325E584D300B4D7B9 /* ResponseDecoding.swift */,
+				9B9D5F9925E7F54B00217AAB /* KeychainService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				9BC3EEDC25DB4B290081639F /* StoresListViewController.swift in Sources */,
 				9BE5D60425E584D300B4D7B9 /* ResponseDecoding.swift in Sources */,
 				9B00C92025E5D544008F537A /* StoreData.swift in Sources */,
+				9B9D5F9A25E7F54B00217AAB /* KeychainService.swift in Sources */,
 				9BC3EEFA25DB5EB30081639F /* RequestType.swift in Sources */,
 				9B224BD125DCB813009976CE /* LoadInput.swift in Sources */,
 				9B4C2B2525E71248007E76D1 /* AvailableAppointments.swift in Sources */,
