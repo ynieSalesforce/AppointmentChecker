@@ -46,6 +46,7 @@ class LocationCell: UITableViewCell {
     addressLabel.text = store.storeAddress
     phoneLabel.text = store.storePhone
     distanceLabel.text = store.city
+    contentView.backgroundColor = .white
     
     store.appointmentData.startWithResult { result in
       switch result {
