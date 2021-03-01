@@ -30,6 +30,7 @@ class EnterAddressHeader: UIView {
     textfield.placeholder = "Please enter zipcode or city"
     textfield.returnKeyType = .search
     textfield.delegate = self
+    textfield.autocorrectionType = .no
     addSubview(textfield)
     return textfield
   }()

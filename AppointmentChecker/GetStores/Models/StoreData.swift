@@ -16,4 +16,7 @@ struct StoreData: Codable {
   let fullPhone: String
   let locationDescription: String
   let milesFromCenter: Float
+  
+  let latitude: Double
+  let longitude: Double
 }

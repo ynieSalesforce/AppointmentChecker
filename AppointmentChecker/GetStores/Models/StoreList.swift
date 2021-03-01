@@ -14,6 +14,8 @@ struct StoreList: Codable {
 
 struct ResolvedAddress: Codable {
   let displayName: String
-  let latitude: Float
-  let longitude: Float
+  let latitude: Double
+  let longitude: Double
+  let locality: String
+  let adminDistrict: String
 }

@@ -13,7 +13,7 @@ import SnapKit
 
 class StoresListViewController: BaseViewController {
   let (addressSignal, addressObserver) = Signal<String, Never>.pipe()
-  private var stores: [StoreViewData] = []
+  private var locations: [LocationViewData] = []
   
   lazy var addressHeader: EnterAddressHeader = {
     let header = EnterAddressHeader.init(addressObserver: addressObserver)
@@ -40,7 +40,13 @@ class StoresListViewController: BaseViewController {
                                                          address: addressSignal,
                                                          refresh: refreshControl.refresh))
     output.data.observeForUI().observeValues { [weak self] data in
-      self?.stores = data.stores
+      var storeArray: [LocationViewData] = [data.0]
+      storeArray.append(data.1.0)
+      storeArray.append(data.1.1)
+      storeArray.append(data.1.2)
+      storeArray.append(data.1.3)
+      
+      self?.locations = storeArray
       self?.tableView.reloadData()
     }
     
@@ -75,15 +81,23 @@ extension StoresListViewController: UITableViewDelegate {
 }
 
 extension StoresListViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return self.locations[section].locationName
+  }
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return self.locations.count
+  }
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    self.stores.count
+    self.locations[section].stores.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.reuseID, for: indexPath) as? LocationCell else {
       return UITableViewCell.init(frame: .zero)
     }
-    let store = stores[indexPath.row]
+    let store = locations[indexPath.section].stores[indexPath.row]
     cell.configure(with: store)
     return cell
   }
