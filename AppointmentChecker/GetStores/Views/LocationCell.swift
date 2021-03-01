@@ -36,8 +36,8 @@ class LocationCell: UITableViewCell {
     let label = UILabel()
     contentView.addSubview(label)
     label.textAlignment = .right
-    label.font = .systemFont(ofSize: 14)
-    label.textColor = .darkGray
+    label.font = .systemFont(ofSize: 16)
+    label.textColor = .black
     return label
   }()
   
@@ -45,7 +45,7 @@ class LocationCell: UITableViewCell {
     storeLabel.text = store.storeName
     addressLabel.text = store.storeAddress
     phoneLabel.text = store.storePhone
-    distanceLabel.text = store.distance
+    distanceLabel.text = store.city
     
     store.appointmentData.startWithResult { result in
       switch result {

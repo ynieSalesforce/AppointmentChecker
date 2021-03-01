@@ -19,10 +19,13 @@ struct StoreViewData {
   let storeName: String
   let storeAddress: String
   let storePhone: String
-  let distance: String
+  let city: String
   
   let appointmentData: SignalProducer<DataType<AppointmentData>, DataLoadingError>
 }
+
+//Distance to search to in miles
+private let expandedDistance: Double = 30
 
 public struct StoresListViewModel {
   struct Output {
@@ -43,32 +46,33 @@ public struct StoresListViewModel {
     let scheduler = Environment.current.scheduler
     let onLoad = input.lifeCycle.viewDidLoadProperty.signal.observe(on: scheduler)
 
-    let dataOnLoad = onLoad.map(retrieveSavedLocation).map(convertStringToLocation)
+    let dataOnLoad = onLoad.map(retrieveSavedLocation).flatMap(.latest, convertStringToLocation)
     let refresh = input.refresh.withLatest(from: input.address).map { $0.1 }
-      .map(convertStringToLocation)
-    let address = input.address.observe(on: scheduler).map(convertStringToLocation)
+      .flatMap(.latest, convertStringToLocation)
+    let inputAddress = input.address.observe(on: scheduler).flatMap(.latest, convertStringToLocation)
     
-    let (loading, loadData) = switchMapWithIndicator(dataOnLoad)
-    let (addressLoading, addressData) = switchMapWithIndicator(address)
-    let (refreshing, refreshedData) = switchMapWithIndicator(refresh)
     
-    let bcc = loadData.values().map(getSurroundingCoordinates).map(transform)
+    let initialSurroundLocations = dataOnLoad.map(getSurroundingCoordinates).map(transform).ignoreErrors()
+    let refreshSurroundLocations = refresh.map(getSurroundingCoordinates).map(transform).ignoreErrors()
+    let inputSurroundLocations = inputAddress.map(getSurroundingCoordinates).map(transform).ignoreErrors()
     
-//      .observeValues { producer in
-//      producer.map { value in
-//        value.map(convertStringToLocation)
-//      }
-//    }
-    let (_, initialValues) = switchMapWithIndicator(bcc)
-//    let data = Signal.merge(initialValues,
-//                            addressData.values().map(toViewData),
-//                            refreshedData.values().map(toViewData))
+    let (initialLoading, initialSurroundingValues) = switchMapWithIndicator(initialSurroundLocations)
+    let (refreshing, refreshSurroundValues) = switchMapWithIndicator(refreshSurroundLocations)
+    let (inputLoading, inputSurroundValues) = switchMapWithIndicator(inputSurroundLocations)
     
-    let errors = Signal.merge(addressData.errors(), refreshedData.errors())
-    let loadingData = Signal.merge(loading, addressLoading)
+    let errors = Signal.merge(initialSurroundingValues.materialize().errors(),
+                              refreshSurroundValues.materialize().errors(),
+                              inputSurroundValues.materialize().errors())
     
-    let combined = loadData.values().map(toViewData).combineLatest(with: initialValues.values())
-    return .init(data: combined,
+    let loadingData = Signal.merge(initialLoading, inputLoading)
+    
+    let combinedInitialValues = dataOnLoad.map(toViewData).combineLatest(with: initialSurroundingValues)
+    let combinedRefreshValues = refresh.map(toViewData).combineLatest(with: refreshSurroundValues)
+    let combinedInputValues = inputAddress.map(toViewData).combineLatest(with: inputSurroundValues)
+    
+    let dataSum = Signal.merge(combinedInitialValues, combinedRefreshValues, combinedInputValues).ignoreErrors()
+    
+    return .init(data: dataSum,
                  dataIsLoading: loadingData,
                  isRefreshing: refreshing,
                  dataLoadError: errors,
@@ -76,7 +80,7 @@ public struct StoresListViewModel {
   }
 }
 
-private func transform(input: [SignalProducer<String?, Never>]) -> MaterializedDataLoadingProducer<(LocationViewData, LocationViewData, LocationViewData, LocationViewData)>{
+private func transform(input: [SignalProducer<String?, Never>]) -> SignalProducer<(LocationViewData, LocationViewData, LocationViewData, LocationViewData), DataLoadingError>{
   let getAddressQuery = curry(addressQuery)(false)
 
   let inputArray = input.map{$0.skipNil()
@@ -94,17 +98,16 @@ private func transform(input: [SignalProducer<String?, Never>]) -> MaterializedD
   let sum = lat.combineLatest(with: long).compactMap { (data) -> (LocationViewData, LocationViewData, LocationViewData, LocationViewData) in
     return (data.0.0, data.0.1, data.1.0, data.1.1)
   }
-  return sum.materialize()
+  return sum
 }
 
-private func convertStringToLocation(inputString: String?) -> MaterializedDataLoadingProducer<DataType<StoreList>>{
+private func convertStringToLocation(inputString: String?) -> DataProducer<DataType<StoreList>>{
   let getAddressQuery = curry(addressQuery)(true)
   return SignalProducer.init(value: inputString)
     .skipNil()
     .map(getAddressQuery)
     .skipNil()
     .flatMap(.latest, retrieveData).producer
-    .materialize()
 }
 
 private func retrieveSavedLocation() -> String? {
@@ -135,9 +138,9 @@ private func storeToStoreViewData(store: StoreData) -> StoreViewData {
   let loadCriteria = LoadCriteria.init(loadInput: .init(storeId: "\(store.storeNumber)"), forceRefresh: true)
   let query: DataQuery<DataType<AppointmentData>>? = DataQuery.availableAppoints(for: loadCriteria)
   let appointment = Environment.current.dataLoader.retrieve(query!)
-  let distance = "Distance: \(store.milesFromCenter)mi"
+  let city = "City: \(store.city)"
   
-  return .init(storeName: "Store Number: \(store.storeNumber)", storeAddress: store.address, storePhone: store.fullPhone, distance: distance, appointmentData: appointment)
+  return .init(storeName: "Store Number: \(store.storeNumber)", storeAddress: store.address, storePhone: store.fullPhone, city: city, appointmentData: appointment)
 }
 
 private func getSurroundingCoordinates(from store: DataType<StoreList>) -> [SignalProducer<String?, Never>]{
@@ -147,10 +150,10 @@ private func getSurroundingCoordinates(from store: DataType<StoreList>) -> [Sign
   let location = CLLocationCoordinate2D.init(latitude: lat, longitude: long)
   let locationCalculator = curry(calculateLatLong)(location)
   
-  let northLocation = locationCalculator(15)(0)
-  let southLocation = locationCalculator(-15)(0)
-  let eastLocation = locationCalculator(0)(-15)
-  let westLocation = locationCalculator(0)(15)
+  let northLocation = locationCalculator(expandedDistance)(0)
+  let southLocation = locationCalculator(-expandedDistance)(0)
+  let eastLocation = locationCalculator(0)(-expandedDistance)
+  let westLocation = locationCalculator(0)(expandedDistance)
   
   return [northLocation, southLocation, eastLocation, westLocation]
 }
