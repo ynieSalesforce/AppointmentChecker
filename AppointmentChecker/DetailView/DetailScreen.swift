@@ -23,22 +23,19 @@ struct DetailScreen: View {
   
   var body: some View {
     NavigationView {
-      VStack {
-        List {
-          
-        }
+      List {
         HStack {
           TextField("Enter a Zipcode", text: $searchText).padding()
           Button("Search") {
-            print("searchTexT: \(searchText)")
+            print("searchText: \(searchText)")
             addressObserver.send(value: searchText)
           }.padding()
+          
         }
         retrieveView
-        if !detailModel.northStores.isEmpty {
-          northListView
-        }
-      }
+        northListView
+        southListView
+      }.listStyle(GroupedListStyle())
     }
   }
   
@@ -47,18 +44,49 @@ struct DetailScreen: View {
       LoadingView()
       Spacer()
     } else {
-      northListView
+      centerListView
     }
   }
   
   @ViewBuilder private var northListView: some View {
-    List {
+    if detailModel.northStores.isEmpty {
+      Spacer()
+    } else {
       ForEach(detailModel.northStores) { section in
-        Text(section.locationName)
+        Text("North: \(section.locationName)")
         
         ForEach(section.stores) { store in
-          DetailCell(store: store)
+          NorthDetailCell(store: store).onTapGesture {
+            print("North view tapped")
+          }
         }
+      }
+    }
+  }
+  
+  @ViewBuilder private var southListView: some View {
+    if detailModel.southStores.isEmpty {
+      Spacer()
+    } else {
+      ForEach(detailModel.southStores) { section in
+        Text("South: \(section.locationName)").padding().font(.title)
+        
+        ForEach(section.stores) { store in
+          VStack(alignment: .leading) {
+            Text(store.storeAddress).foregroundColor(.blue).font(.caption2)
+            SouthDetailCell(store: store)
+          }
+        }
+      }
+    }
+  }
+  
+  @ViewBuilder private var centerListView: some View {
+    ForEach(detailModel.northStores) { section in
+      Text(section.locationName)
+      
+      ForEach(section.stores) { store in
+        DetailCell(store: store)
       }
     }
   }

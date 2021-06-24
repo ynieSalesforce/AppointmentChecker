@@ -14,6 +14,7 @@
 		4C51983A268298F0007CF107 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C519839268298F0007CF107 /* DetailViewController.swift */; };
 		4C51983F268299E2007CF107 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51983E268299E2007CF107 /* DetailScreen.swift */; };
 		4C51E5332684E94800EF76C4 /* NorthDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51E5322684E94800EF76C4 /* NorthDetailCell.swift */; };
+		4C51E5382684ED6B00EF76C4 /* SouthDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51E5372684ED6B00EF76C4 /* SouthDetailCell.swift */; };
 		6C36DF7D1839CAADFFFA80DD /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C757D689BB9F0810EA87A85F /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework */; };
 		9B00C92025E5D544008F537A /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C91F25E5D544008F537A /* StoreData.swift */; };
 		9B00C92525E5D60D008F537A /* StoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C92425E5D60D008F537A /* StoreList.swift */; };
@@ -81,6 +82,7 @@
 		4C519839268298F0007CF107 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4C51983E268299E2007CF107 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		4C51E5322684E94800EF76C4 /* NorthDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorthDetailCell.swift; sourceTree = "<group>"; };
+		4C51E5372684ED6B00EF76C4 /* SouthDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SouthDetailCell.swift; sourceTree = "<group>"; };
 		76385F360C55FEFEB7E53B7D /* Pods_AppointmentChecker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppointmentChecker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B00C91F25E5D544008F537A /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		9B00C92425E5D60D008F537A /* StoreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreList.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				4C1CEE2D2683E396003E32DB /* DetailCell.swift */,
 				4C51E5322684E94800EF76C4 /* NorthDetailCell.swift */,
+				4C51E5372684ED6B00EF76C4 /* SouthDetailCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				9B4C2B0A25E6D0AC007E76D1 /* UIButton+Extensions.swift in Sources */,
 				9B224BC925DCB805009976CE /* APIClient.swift in Sources */,
 				4C51983F268299E2007CF107 /* DetailScreen.swift in Sources */,
+				4C51E5382684ED6B00EF76C4 /* SouthDetailCell.swift in Sources */,
 				9B4C2B0F25E6D426007E76D1 /* Signal+Extensions.swift in Sources */,
 				9BC3EE9325DB4AA80081639F /* SceneDelegate.swift in Sources */,
 				9B4C2B1D25E6F86F007E76D1 /* LocationCell.swift in Sources */,

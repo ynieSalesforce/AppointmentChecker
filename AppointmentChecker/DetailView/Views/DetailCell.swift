@@ -19,6 +19,7 @@ struct DetailCell: View {
         Text(store.storeName).font(.title2)
         Text(store.storePhone)
       }
+      Spacer()
       VStack(alignment: .trailing) {
         Text(store.storeAddress)
         Text(store.city)
