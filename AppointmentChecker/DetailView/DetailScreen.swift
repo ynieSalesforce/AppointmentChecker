@@ -22,26 +22,27 @@ struct DetailScreen: View {
   }
   
   var body: some View {
-    NavigationView {
-      List {
-        HStack {
-          TextField("Enter a Zipcode", text: $searchText).padding()
-          Button("Search") {
-            print("searchText: \(searchText)")
-            addressObserver.send(value: searchText)
-          }.padding()
-          
-        }
-        retrieveView
-        northListView
-        southListView
-      }.listStyle(GroupedListStyle())
-    }
+    List {
+      HStack {
+        TextField("Enter a Zipcode", text: $searchText).padding()
+        Button("Search") {
+          print("searchText: \(searchText)")
+          addressObserver.send(value: searchText)
+        }.padding()
+        
+      }
+      retrieveView
+      northListView
+      southListView
+    }.listStyle(GroupedListStyle())
   }
   
   @ViewBuilder private var retrieveView: some View {
     if detailModel.loading {
       LoadingView()
+      Spacer()
+    } else if detailModel.error != nil {
+      ErrorView()
       Spacer()
     } else {
       centerListView

@@ -12,7 +12,7 @@ import ReactiveSwift
 
 struct SouthDetailCell: View {
   let store: StoreViewData
-  @State private var fontColor: Color = Color.white
+  @State private var fontColor: Color = Color.black
   var body: some View {
     HStack {
       VStack (alignment: .leading) {

@@ -12,7 +12,7 @@ import ReactiveSwift
 
 struct DetailCell: View {
   let store: StoreViewData
-  @State private var indicatorColor: Color = Color.white
+  @State private var indicatorColor: Color = Color.black
   var body: some View {
     HStack {
       VStack (alignment: .leading) {

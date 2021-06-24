@@ -53,6 +53,7 @@
 		9BC3EF2725DB655D0081639F /* TriggerSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3EF2625DB655D0081639F /* TriggerSignal.swift */; };
 		9BE5D5F325E57BEC00B4D7B9 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5D5F225E57BEC00B4D7B9 /* DataService.swift */; };
 		9BE5D60425E584D300B4D7B9 /* ResponseDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5D60325E584D300B4D7B9 /* ResponseDecoding.swift */; };
+		9BEA2F55268510F100FCBF0C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA2F54268510F100FCBF0C /* ErrorView.swift */; };
 		F188C952EC05B01A3A8AB9B0 /* Pods_AppointmentCheckerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1847DF77B8D74FCFFC1FCD /* Pods_AppointmentCheckerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,7 @@
 		9BC3EF2625DB655D0081639F /* TriggerSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerSignal.swift; sourceTree = "<group>"; };
 		9BE5D5F225E57BEC00B4D7B9 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9BE5D60325E584D300B4D7B9 /* ResponseDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoding.swift; sourceTree = "<group>"; };
+		9BEA2F54268510F100FCBF0C /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AAB63BD2C95CCA8B565B5E38 /* Pods-AppointmentChecker-AppointmentCheckerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointmentChecker-AppointmentCheckerUITests.debug.xcconfig"; path = "Target Support Files/Pods-AppointmentChecker-AppointmentCheckerUITests/Pods-AppointmentChecker-AppointmentCheckerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C394CD37F35EC2D54E94347B /* Pods-AppointmentChecker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppointmentChecker.release.xcconfig"; path = "Target Support Files/Pods-AppointmentChecker/Pods-AppointmentChecker.release.xcconfig"; sourceTree = "<group>"; };
 		C757D689BB9F0810EA87A85F /* Pods_AppointmentChecker_AppointmentCheckerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppointmentChecker_AppointmentCheckerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				4C1CEE33268430C6003E32DB /* LoadingView.swift */,
+				9BEA2F54268510F100FCBF0C /* ErrorView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				9B00C92525E5D60D008F537A /* StoreList.swift in Sources */,
 				9BE5D5F325E57BEC00B4D7B9 /* DataService.swift in Sources */,
 				9B4C2AFD25E6CB4E007E76D1 /* UITableview+Extensions.swift in Sources */,
+				9BEA2F55268510F100FCBF0C /* ErrorView.swift in Sources */,
 				9BC3EF0125DB5FA70081639F /* BaseViewController.swift in Sources */,
 				9BC3EF1125DB607C0081639F /* Reloadable.swift in Sources */,
 				4C1CEE2E2683E396003E32DB /* DetailCell.swift in Sources */,
