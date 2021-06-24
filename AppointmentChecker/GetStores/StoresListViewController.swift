@@ -77,7 +77,11 @@ class StoresListViewController: BaseViewController {
 }
 
 extension StoresListViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    let detailView = DetailViewController()
+    navigationController?.pushViewController(detailView, animated: true)
+  }
 }
 
 extension StoresListViewController: UITableViewDataSource {

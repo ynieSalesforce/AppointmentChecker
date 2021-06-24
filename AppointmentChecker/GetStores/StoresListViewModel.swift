@@ -9,13 +9,22 @@ import Foundation
 import Overture
 import ReactiveSwift
 import MapKit
+import SwiftUI
 
-struct LocationViewData {
+struct LocationViewData: Identifiable {
+  let id: String
   let stores: [StoreViewData]
   let locationName: String
+  
+  init(stores: [StoreViewData], locationName: String) {
+    id = locationName
+    self.locationName = locationName
+    self.stores = stores
+  }
 }
 
-struct StoreViewData {
+struct StoreViewData: Identifiable {
+  let id: Int
   let storeName: String
   let storeAddress: String
   let storePhone: String
@@ -25,7 +34,7 @@ struct StoreViewData {
 }
 
 //Distance to search to in miles
-private let expandedDistance: Double = 30
+private let expandedDistance: Double = 5
 
 public struct StoresListViewModel {
   struct Output {
@@ -140,7 +149,7 @@ private func storeToStoreViewData(store: StoreData) -> StoreViewData {
   let appointment = Environment.current.dataLoader.retrieve(query!)
   let city = "City: \(store.city)"
   
-  return .init(storeName: "Store Number: \(store.storeNumber)", storeAddress: store.address, storePhone: store.fullPhone, city: city, appointmentData: appointment)
+  return .init(id: store.storeNumber, storeName: "Store Number: \(store.storeNumber)", storeAddress: store.address, storePhone: store.fullPhone, city: city, appointmentData: appointment)
 }
 
 private func getSurroundingCoordinates(from store: DataType<StoreList>) -> [SignalProducer<String?, Never>]{
