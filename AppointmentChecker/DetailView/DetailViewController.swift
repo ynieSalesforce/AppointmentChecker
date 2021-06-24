@@ -18,7 +18,11 @@ class DetailViewController: BaseViewController {
     let output = StoresListViewModel.create(input: .init(lifeCycle: lifecycle,
                                                          address: addressSignal, refresh: refreshControl.refresh))
     output.data.observeForUI().observeValues { [weak self] data in
-      self?.detailModel.stores = [data.0]
+      self?.detailModel.centerStores = [data.0]
+      self?.detailModel.northStores = [data.1.0]
+      self?.detailModel.southStores = [data.1.1]
+      self?.detailModel.eastStores = [data.1.2]
+      self?.detailModel.westStores = [data.1.3]
     }
     
     output.dataIsLoading.observeForUI().observeValues { isLoading in

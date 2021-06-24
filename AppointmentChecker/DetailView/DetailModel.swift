@@ -9,7 +9,11 @@ import Foundation
 import SwiftUI
 
 class DetailModel: ObservableObject {
-  @Published var stores: [LocationViewData] = []
+  @Published var centerStores: [LocationViewData] = []
+  @Published var northStores: [LocationViewData] = []
+  @Published var southStores: [LocationViewData] = []
+  @Published var westStores: [LocationViewData] = []
+  @Published var eastStores: [LocationViewData] = []
   @Published var loading: Bool = false
   @Published var error: DataLoadingError? = nil
 }

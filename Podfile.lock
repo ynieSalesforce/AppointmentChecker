@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (5.4.1)
-  - FlexLayout (1.3.20)
+  - Alamofire (5.4.3)
+  - FlexLayout (1.3.21)
   - KeychainSwift (19.0.0)
   - Overture (0.5.0)
-  - PinLayout (1.9.3)
+  - PinLayout (1.10.0)
   - ReactiveCocoa (10.3.0):
     - ReactiveSwift (~> 6.2)
-  - ReactiveSwift (6.5.0)
+  - ReactiveSwift (6.6.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
@@ -31,15 +31,15 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
-  FlexLayout: 025dd153bd5618dcc9f93ef914106d7dc2a86fdc
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  FlexLayout: 369187058b11d0452055ba6cce59c4572b430906
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   Overture: 2e6252ead5da6d3347f758047f27a31cb469d59d
-  PinLayout: 4d8733121f8687edcc8f00c19bf1379d12808767
+  PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
   ReactiveCocoa: 083ae559e6f588ce519cab412ea119b431c26a24
-  ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
+  ReactiveSwift: fab34244ad908808dc822bae352a058c8837c4ca
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: fc13fb341eef0852d3c4872ddbf4aee3f896bee0
+PODFILE CHECKSUM: 8841538e892ece5ecb967412af10d21c86f9674f
 
 COCOAPODS: 1.10.1

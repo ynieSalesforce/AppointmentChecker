@@ -24,6 +24,9 @@ struct DetailScreen: View {
   var body: some View {
     NavigationView {
       VStack {
+        List {
+          
+        }
         HStack {
           TextField("Enter a Zipcode", text: $searchText).padding()
           Button("Search") {
@@ -32,7 +35,10 @@ struct DetailScreen: View {
           }.padding()
         }
         retrieveView
-      }.navigationBarTitle("Settings")
+        if !detailModel.northStores.isEmpty {
+          northListView
+        }
+      }
     }
   }
   
@@ -41,13 +47,13 @@ struct DetailScreen: View {
       LoadingView()
       Spacer()
     } else {
-      listView
+      northListView
     }
   }
   
-  @ViewBuilder private var listView: some View {
+  @ViewBuilder private var northListView: some View {
     List {
-      ForEach(detailModel.stores) { section in
+      ForEach(detailModel.northStores) { section in
         Text(section.locationName)
         
         ForEach(section.stores) { store in
@@ -66,7 +72,7 @@ struct DetailScreen_Previews: PreviewProvider {
         StoreViewData.init(id: 45678, storeName: "Columbia", storeAddress: "4434 Main Street", storePhone: "445-937-7485", city: "Columbia", appointmentData: .never),
       ]
       let model = DetailModel.init()
-      model.stores = [
+      model.centerStores = [
         LocationViewData.init(stores: stores, locationName: "Columbia, MD")
       ]
       model.loading = false
