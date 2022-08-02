@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,12 @@
 		9B00C93725E5F4B5008F537A /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C93625E5F4B5008F537A /* Values.swift */; };
 		9B00C93C25E5F4C1008F537A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C93B25E5F4C1008F537A /* Errors.swift */; };
 		9B00C94125E5F511008F537A /* IndicatorSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C94025E5F511008F537A /* IndicatorSignal.swift */; };
+		9B1D2FC828988D3F00E01F90 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9B1D2FC728988D3F00E01F90 /* ComposableArchitecture */; };
+		9B1D2FCC2898956D00E01F90 /* WeeklyForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D2FCB2898956D00E01F90 /* WeeklyForecastResponse.swift */; };
+		9B1D2FCE2898958400E01F90 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D2FCD2898958400E01F90 /* WeatherService.swift */; };
+		9B1D2FD128989D0E00E01F90 /* WeatherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D2FD028989D0E00E01F90 /* WeatherState.swift */; };
+		9B1D2FD428989DEE00E01F90 /* WeatherReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D2FD328989DEE00E01F90 /* WeatherReducer.swift */; };
+		9B1D2FD72898A10800E01F90 /* WeatherActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D2FD62898A10800E01F90 /* WeatherActions.swift */; };
 		9B224BC925DCB805009976CE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B224BC825DCB805009976CE /* APIClient.swift */; };
 		9B224BD125DCB813009976CE /* LoadInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B224BD025DCB813009976CE /* LoadInput.swift */; };
 		9B4C2AFD25E6CB4E007E76D1 /* UITableview+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C2AFC25E6CB4E007E76D1 /* UITableview+Extensions.swift */; };
@@ -92,6 +98,11 @@
 		9B00C93625E5F4B5008F537A /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		9B00C93B25E5F4C1008F537A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		9B00C94025E5F511008F537A /* IndicatorSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSignal.swift; sourceTree = "<group>"; };
+		9B1D2FCB2898956D00E01F90 /* WeeklyForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyForecastResponse.swift; sourceTree = "<group>"; };
+		9B1D2FCD2898958400E01F90 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		9B1D2FD028989D0E00E01F90 /* WeatherState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherState.swift; sourceTree = "<group>"; };
+		9B1D2FD328989DEE00E01F90 /* WeatherReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherReducer.swift; sourceTree = "<group>"; };
+		9B1D2FD62898A10800E01F90 /* WeatherActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherActions.swift; sourceTree = "<group>"; };
 		9B224BC825DCB805009976CE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		9B224BD025DCB813009976CE /* LoadInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadInput.swift; sourceTree = "<group>"; };
 		9B4C2AFC25E6CB4E007E76D1 /* UITableview+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableview+Extensions.swift"; sourceTree = "<group>"; };
@@ -142,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1D2FC828988D3F00E01F90 /* ComposableArchitecture in Frameworks */,
 				2A9F97A347F0CD952C61DB5B /* Pods_AppointmentChecker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +230,50 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		9B1D2FC92898945100E01F90 /* ComposableImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D2FD528989ED500E01F90 /* Actions */,
+				9B1D2FD228989DE500E01F90 /* Reducer */,
+				9B1D2FCF28989BFE00E01F90 /* State */,
+				9B1D2FCA2898947E00E01F90 /* WeatherAPI */,
+			);
+			path = ComposableImplementation;
+			sourceTree = "<group>";
+		};
+		9B1D2FCA2898947E00E01F90 /* WeatherAPI */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D2FCB2898956D00E01F90 /* WeeklyForecastResponse.swift */,
+				9B1D2FCD2898958400E01F90 /* WeatherService.swift */,
+			);
+			path = WeatherAPI;
+			sourceTree = "<group>";
+		};
+		9B1D2FCF28989BFE00E01F90 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D2FD028989D0E00E01F90 /* WeatherState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		9B1D2FD228989DE500E01F90 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D2FD328989DEE00E01F90 /* WeatherReducer.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		9B1D2FD528989ED500E01F90 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D2FD62898A10800E01F90 /* WeatherActions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		9B224BC725DCB7ED009976CE /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +328,7 @@
 		9BC3EE8F25DB4AA80081639F /* AppointmentChecker */ = {
 			isa = PBXGroup;
 			children = (
+				9B1D2FC92898945100E01F90 /* ComposableImplementation */,
 				4C1CEE322684309A003E32DB /* Shared */,
 				4C51983826829763007CF107 /* DetailView */,
 				9B4C2AFB25E6CB3B007E76D1 /* Extensions */,
@@ -393,6 +450,9 @@
 			dependencies = (
 			);
 			name = AppointmentChecker;
+			packageProductDependencies = (
+				9B1D2FC728988D3F00E01F90 /* ComposableArchitecture */,
+			);
 			productName = AppointmentChecker;
 			productReference = 9BC3EE8D25DB4AA80081639F /* AppointmentChecker.app */;
 			productType = "com.apple.product-type.application";
@@ -467,6 +527,9 @@
 				Base,
 			);
 			mainGroup = 9BC3EE8425DB4AA80081639F;
+			packageReferences = (
+				9B1D2FC628988D3F00E01F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 9BC3EE8E25DB4AA80081639F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -630,6 +693,7 @@
 				9BC3EEE225DB4B590081639F /* Environment.swift in Sources */,
 				9BC3EED425DB4B120081639F /* StoresListViewModel.swift in Sources */,
 				9B00C92A25E5D6AC008F537A /* DataType.swift in Sources */,
+				9B1D2FCE2898958400E01F90 /* WeatherService.swift in Sources */,
 				4C1CEE34268430C6003E32DB /* LoadingView.swift in Sources */,
 				9B00C92525E5D60D008F537A /* StoreList.swift in Sources */,
 				9BE5D5F325E57BEC00B4D7B9 /* DataService.swift in Sources */,
@@ -637,8 +701,10 @@
 				9BEA2F55268510F100FCBF0C /* ErrorView.swift in Sources */,
 				9BC3EF0125DB5FA70081639F /* BaseViewController.swift in Sources */,
 				9BC3EF1125DB607C0081639F /* Reloadable.swift in Sources */,
+				9B1D2FD128989D0E00E01F90 /* WeatherState.swift in Sources */,
 				4C1CEE2E2683E396003E32DB /* DetailCell.swift in Sources */,
 				9B00C93C25E5F4C1008F537A /* Errors.swift in Sources */,
+				9B1D2FD428989DEE00E01F90 /* WeatherReducer.swift in Sources */,
 				9B00C94125E5F511008F537A /* IndicatorSignal.swift in Sources */,
 				9BC3EE9B25DB4AA80081639F /* AppointmentChecker.xcdatamodeld in Sources */,
 				9B4C2B0525E6CD74007E76D1 /* EnterAddressHeader.swift in Sources */,
@@ -646,8 +712,10 @@
 				9BE5D60425E584D300B4D7B9 /* ResponseDecoding.swift in Sources */,
 				9B00C92025E5D544008F537A /* StoreData.swift in Sources */,
 				9B9D5F9A25E7F54B00217AAB /* KeychainService.swift in Sources */,
+				9B1D2FCC2898956D00E01F90 /* WeeklyForecastResponse.swift in Sources */,
 				9BC3EEFA25DB5EB30081639F /* RequestType.swift in Sources */,
 				9B224BD125DCB813009976CE /* LoadInput.swift in Sources */,
+				9B1D2FD72898A10800E01F90 /* WeatherActions.swift in Sources */,
 				9B4C2B2525E71248007E76D1 /* AvailableAppointments.swift in Sources */,
 				9BC3EEEB25DB4B720081639F /* DataQuery.swift in Sources */,
 				4C51E5332684E94800EF76C4 /* NorthDetailCell.swift in Sources */,
@@ -983,6 +1051,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B1D2FC628988D3F00E01F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B1D2FC728988D3F00E01F90 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B1D2FC628988D3F00E01F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9BC3EE9925DB4AA80081639F /* AppointmentChecker.xcdatamodeld */ = {

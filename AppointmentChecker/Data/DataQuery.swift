@@ -32,6 +32,20 @@ extension DataQuery {
       components.queryItems = [
         URLQueryItem(name: "storeNumber", value: storeNumber)
       ]
+    case .WeeklyWeather(city: let city):
+        components.queryItems = [
+          URLQueryItem(name: "q", value: city),
+          URLQueryItem(name: "mode", value: "json"),
+          URLQueryItem(name: "units", value: "metric"),
+          URLQueryItem(name: "APPID", value: "3e57f467e502f3d9292d00616d020888")
+        ]
+    case .CurrentWeather(city: let city):
+        components.queryItems = [
+          URLQueryItem(name: "q", value: city),
+          URLQueryItem(name: "mode", value: "json"),
+          URLQueryItem(name: "units", value: "metric"),
+          URLQueryItem(name: "APPID", value: "3e57f467e502f3d9292d00616d020888")
+        ]
     }
     return components.url
   }
@@ -51,5 +65,13 @@ extension DataQuery {
     }
     return .init(type: .CheckAppointments(storeNumber: storeId), method: .get, decoder: .decodable)
   }
+    
+    static func currentWeather(for city: String) -> DataQuery? {
+        .init(type: .CurrentWeather(city: city), method: .get, decoder: .decodable)
+    }
+    
+    static func weeklyWeather(for city: String) -> DataQuery? {
+        .init(type: .WeeklyWeather(city: city), method: .get, decoder: .decodable)
+    }
 }
 
