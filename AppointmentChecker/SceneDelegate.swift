@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,10 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
-    let navController = UINavigationController.init()
-    let addressSearch = StoresListViewController.init()
-    navController.viewControllers = [addressSearch]
-    window?.rootViewController = navController
+//    let navController = UINavigationController.init()
+//    let addressSearch = StoresListViewController.init()
+//    navController.viewControllers = [addressSearch]
+//    window?.rootViewController = navController
+    
+    let contentView = WeatherComposableView(
+      store: .init(initialState: WeatherState.init(),
+                   reducer: weatherReducer,
+                   environment:WeatherEnvironment()))
+    window?.rootViewController = UIHostingController(rootView: contentView)
     window?.makeKeyAndVisible()
   }
 
